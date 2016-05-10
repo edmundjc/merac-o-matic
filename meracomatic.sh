@@ -4,16 +4,16 @@
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-intro=$(( ( RANDOM % 7 ) + 1 ))
-body=$(( ( RANDOM % 24 ) + 1 ))
+intro=$(( ( RANDOM % 13 ) + 1 ))
+body=$(( ( RANDOM % 28 ) + 1 ))
 outro=$(( ( RANDOM % 9 ) + 1 ))
 case $intro in
   1) output="Spoken with the fanatical fervour that i have come to expect from the linux community... " ;;
@@ -23,6 +23,14 @@ case $intro in
   5) output="You just hate windows, ";;
   6) output="Your all windows haters, ";;
   7) output="";;
+  #Jer
+  8) output="Allow me to once again bring light to your ambiguity. ";;
+  9) output="There you go, misdirecting the facts... again. ";;
+  10) output="A failed attempt at appearing knowledgeable. ";;
+  11) output="It's time you faced the harsh reality. ";;
+  12) output="Definitely you do not have a life, ";;
+  13) output="It’s what I have come to expect from the hipsters.. ";;
+  #/Jer
 esac
 case $body in
   1) output=$output"The data clearly shows that linux is on the decline... ";;
@@ -49,6 +57,12 @@ case $body in
   22) output=$output"You all hate windows... ";;
   23) output=$output"Stop hating on windows. ";;
   24) output=$output"All you do is spam the forum with beging threads for inclusion... ";;
+  #Jer
+  25) output=$output"There is no need for a linux inclusion thread filled with spam at this forum meant for those who wish to discuss gameplay. ";;
+  26) output=$output"This thead is filled with speculation from the linux hipster set that honestly believe this thread makes any difference at all. ";;
+  27) output=$output"The fact is, for every game that gets ported. 10 are released without linux support. ";;
+  28) output=$output"90% of all steam users has windows.. all games on steam are released on windows. ";;
+  #/Jer
 esac
 case $outro in
   1) output=$output"so stop begging for inclusion.";;
@@ -59,7 +73,10 @@ case $outro in
   6) output=$output"lol, you keep getting dumebr.";;
   7) output=$output"Unless your one of those who belives in: Almost pregnant,";;
   8) output=$output"Anything else is just noise from the Windows haters.";;
+  #Jer
+  9) output=$output"But none of this is relevant if you don't buy the games when they do get ported.";;
+  #/Jer
 esac
 echo $output
 echo $output >> ~/meracomatic.txt
-zenity --info --title="Merac-O-Matic" --text="$output"
+zenity --info --title="Merac-O-Matic" --text="$output" &
